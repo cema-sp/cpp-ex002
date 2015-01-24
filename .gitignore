@@ -1,0 +1,12 @@
+# Ignore build files:
+build/*
+
+# Ignore compiled binaries and libraries:
+bin/*
+lib/*
+
+# Ignore temporary files
+tmp/*
+
+# Use .gitkeep for keeping directory structure
+!**/.gitkeep
