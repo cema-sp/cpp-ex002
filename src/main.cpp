@@ -1,30 +1,33 @@
 #include <iostream>
 #include <cmath>
 #include "vector.h"
-
-using namespace std;
+#include "complex.h"
 
 double sqrt_sum(Vector& v)
 {
   double sum = 0;
   for (int i = 0; i < v.size(); ++i)
   {
-    sum += sqrt(v[i]);
+    sum += std::sqrt(v[i]);
   }
   return sum;
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-  Vector v(5);
-  v[0] = 0;
-  v[1] = 1;
-  v[2] = 2;
-  v[3] = 3;
-  v[4] = 4;
+  Vector v {0,1,2,3,4};
 
-  cout << "SQRT = ";
-  cout << sqrt_sum(v) << endl;
+  std::cout << "SQRT = ";
+  std::cout << sqrt_sum(v) << std::endl;
+
+  Complex a{1,2};
+  Complex b{1.5, 5.5};
+
+  std::cout << "a = " << a << std::endl;
+  std::cout << "b = " << b << std::endl;
+  std::cout << "a + b = " << (a + b) << std::endl;
+  std::cout << "a * b = " << (a * b) << std::endl;
+  std::cout << "a / b = " << (a / b) << std::endl;
   
   return 0;
 }
