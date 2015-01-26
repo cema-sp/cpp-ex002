@@ -14,19 +14,17 @@ public:
 
   Complex& operator+=(Complex z) { re += z.re; im += z.im; return *this; }
   Complex& operator-=(Complex z) { re -= z.re; im -= z.im; return *this; }
-  Complex& operator*=(Complex z)
-  {
-    re = re * z.real() - im * z.imag();
-    im = re * z.imag() + im * z.real();
-    return *this;
-  }
-  Complex& operator/=(Complex z)
-  {
-    double d = z.real() * z.real() + z.imag() * z.imag();
-    re = re * z.real() + im * z.imag();
-    re /= d;
-    im = - re * z.imag() + im * z.real();
-    im /= d;
-    return *this;
-  }
+  Complex& operator*=(Complex);
+  Complex& operator/=(Complex);
 };
+
+Complex operator+(Complex, Complex);
+Complex operator-(Complex, Complex);
+Complex operator*(Complex, Complex);
+Complex operator/(Complex, Complex);
+Complex operator-(Complex);
+
+bool operator==(Complex, Complex);
+bool operator!=(Complex, Complex);
+
+std::ostream& operator<<(std::ostream& out, Complex);

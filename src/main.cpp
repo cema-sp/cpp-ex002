@@ -15,10 +15,15 @@ double sqrt_sum(Vector& v)
 
 int main()
 {
-  Vector v {0,1,2,3,4};
+  Vector v1 {0,1,2,3,4};
+  Vector v2 = v1;
+  v1[4] = 5;
+  v2.push_back(6);
 
+  std::cout << v1 << std::endl;
+  std::cout << v2 << std::endl;
   std::cout << "SQRT = ";
-  std::cout << sqrt_sum(v) << std::endl;
+  std::cout << sqrt_sum(v1) << std::endl;
 
   Complex a{1,2};
   Complex b{1.5, 5.5};

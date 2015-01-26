@@ -9,8 +9,12 @@ public:
   Vector();
   Vector(int sz);
   Vector(std::initializer_list<double>);
-  ~Vector();
+  Vector(const Vector&);
+  ~Vector() { delete[] elem; }
   double& operator[](int);
-  // void push_back(double);
+  Vector& operator=(const Vector&);
+  Vector& push_back(double);
   int size() const;
 };
+
+std::ostream& operator<<(std::ostream& out, Vector&);
